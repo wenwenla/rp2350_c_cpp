@@ -74,6 +74,7 @@ int main()
         ds18b20_reset(0);
         ds18b20_write(0, 0xcc);
         ds18b20_write(0, 0xbe); // read data
+        temperature = 0;
         for (int i = 0; i < 2 * 8; ++i) {
             temperature = temperature | ((uint)ds18b20_read(0) << i);
         }
